@@ -173,6 +173,7 @@ Corpus-based features based on "one-year tweet corpus"
 
 # Negative Sampling
 
+<<<<<<< HEAD
 - Choosing $<n^i, n^j,0>$ from
 
 $$n^j = \text{argmax}_{i \neq j} \space g(n^j, n^i), \forall n^i \in \text{Entity Space}$$
@@ -199,6 +200,33 @@ $$n^j = \text{argmax}_{i \neq j} \space g(n^j, n^i), \forall n^i \in \text{Entit
 --
 
     * Near Miss Sampling
+=======
+[Analysis of the Impact of Negative Sampling on Link Prediction in Knowledge Graphs](https://arxiv.org/pdf/1708.06816.pdf)
+
+--
+
+- Random Sampling
+
+--
+
+- Corrupting positive instances
+
+--
+
+- Typed Sampling
+
+--
+
+- Relational Sampling
+
+--
+
+- Nearest Neighbor Sampling
+
+--
+
+- Near Miss Sampling
+>>>>>>> 33eb1d9a5e96ad27e6f5b738245ea7b4b6637317
 
 ---
 
