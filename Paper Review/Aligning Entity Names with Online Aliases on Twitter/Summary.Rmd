@@ -1,7 +1,7 @@
 ---
 title: "[Aligning Entity Names with Online Aliases on Twitter](http://www.aclweb.org/anthology/W17-1104)"
 author: "Rui Wang"
-date: "2018/12/07"
+date: "2019/01/11"
 output:
   xaringan::moon_reader:
     lib_dir: libs
