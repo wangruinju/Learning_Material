@@ -215,18 +215,18 @@ $$n^j = \text{argmax}_{i \neq j} \space g(n^j, n^i), \forall n^i \in \text{Entit
     
 - Baseline
 
-    * Simple-Match
-    * Alpha-Match
-    * Alpha-RelaxMatch
-    * ML Edit-Dist
+    * Simple-Match: lowercased + no white space
+    * Alpha-Match: no a-z alphabet
+    * Alpha-RelaxMatch: first 5 characters based on Alpha-Match
+    * ML Edit-Dist: only edit distance feature
 
 --
 
 - Evaluation Metric
 
     * Accuracy 
-        * Accuracy: all
-        * Accuracy: 100
+        * Acc-all: the entire evaluation set
+        * Acc-100: the evaluation set of entity pairs that are shown at least 100 times
     
     $$\frac{\text{#correct}}{N}$$
 
@@ -287,18 +287,6 @@ $$n^j = \text{argmax}_{i \neq j} \space g(n^j, n^i), \forall n^i \in \text{Entit
 
 <center>
 
-![](img/table6.png)
-
-<center>
-
----
-
-# Results
-
---
-
-<center>
-
 ![](img/table7.png)
 
 <center>
@@ -311,7 +299,7 @@ $$n^j = \text{argmax}_{i \neq j} \space g(n^j, n^i), \forall n^i \in \text{Entit
 
 - Why is accuracy for high frequency entities lower?
 
-    * High frequency entities have less similarity in their twetter handles.
+    * High frequency entities have less similarity in their twitter handles.
 --
 
 - Do count vectors actually help?
@@ -322,6 +310,10 @@ $$n^j = \text{argmax}_{i \neq j} \space g(n^j, n^i), \forall n^i \in \text{Entit
 ---
 
 # Other Ideas - EntitySpike
+
+**EntitySpike** identifies entities that spike in a popular event like Grammy and constructs a candidate list of alias.
+
+Example: `Justin Timberlake` - `Justin T` or `Timberlake`
 
 <center>
 
@@ -334,6 +326,8 @@ $$n^j = \text{argmax}_{i \neq j} \space g(n^j, n^i), \forall n^i \in \text{Entit
 ---
 
 # Our Cases
+
+go/skillalias
 
 $P_{+}=\{<n^i, n^j,1>|(\forall n_l^i, n_l^j \in e_l) \wedge (\forall e_l \in R)\}$
 
@@ -356,12 +350,11 @@ Example: < `machine learning`, `statistical learning` \>
 
 --
 
-- Feature Engineering ([paragram_300_sl999](https://cogcomp.org/page/resource_view/106))
+- Feature Engineering ([Other embedding: paragram_300_sl999](https://cogcomp.org/page/resource_view/106))
 
 --
 
-- Modeling (**[BERT](https://arxiv.org/abs/1810.04805)** or **[A La Carte Embedding](https://arxiv.org/abs/1805.05388)** or **[NSEEN](https://arxiv.org/pdf/1811.07514.pdf)**)
-
+- Modeling (**[Snorkel](https://hazyresearch.github.io/snorkel/)** or **[BERT](https://arxiv.org/abs/1810.04805)** or **[A La Carte Embedding](https://arxiv.org/abs/1805.05388)** or **[NSEEN](https://arxiv.org/pdf/1811.07514.pdf)**) 
 ---
 
 # References
@@ -379,6 +372,8 @@ Example: < `machine learning`, `statistical learning` \>
 [6] [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/abs/1810.04805)
 
 [7] [A La Carte Embedding: Cheap but Effective Induction of Semantic Feature Vectors](https://arxiv.org/abs/1805.05388)
+
+[8] [Snorkel: Rapid Training Data Creation with Weak Supervision](https://arxiv.org/abs/1711.10160)
 
 ---
 
